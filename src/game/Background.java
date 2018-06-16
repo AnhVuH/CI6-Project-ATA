@@ -11,7 +11,7 @@ public class Background extends GameObject {
 
     public Background() {
 
-        this.renderer = new BackgroundRenderer(Color.BLACK, 1200,600 );
+        this.renderer = new BackgroundRenderer(Color.BLACK, 1200,800 );
     }
 
     @Override

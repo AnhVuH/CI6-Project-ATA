@@ -20,7 +20,7 @@ public class Wall  extends GameObject implements PhysicBody {
 
     @Override
     public BoxCollider getBoxCollider() {
-        return null;
+        return this.boxCollider;
     }
 
     @Override

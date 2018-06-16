@@ -11,10 +11,11 @@ import renderer.ImageRenderer;
 
 public class Player extends GameObject implements PhysicBody {
     private Vector2D velocity;
-    private final float GRAVITY = 1f;
+    private final float GRAVITY = 0.5f;
 
-    private final float FLYSPEED = 3f;
-    private FrameCounter frameCounter = new FrameCounter(25);
+    private final float FLYSPEED = 3.5f;
+    private final float HORIZONTALSPEED = 3f;
+    private FrameCounter frameCounter = new FrameCounter(10);
 
     public BoxCollider boxCollider;
 
@@ -29,17 +30,49 @@ public class Player extends GameObject implements PhysicBody {
 
         if(KeyboardInput.instance.upPressed){
             if(this.frameCounter.run()){
-                this.velocity.addUp(0,GRAVITY-FLYSPEED );
+                this.velocity.y += GRAVITY-FLYSPEED;
                 this.frameCounter.reset();
             }
         }
-        else{
-            this.velocity.addUp(0,GRAVITY);
+        else {
+            this.velocity.y +=GRAVITY;
         }
-        System.out.println(this.velocity.y);
 
+        this.velocity.x=0;
+
+        if(KeyboardInput.instance.leftPressed){
+                this.velocity.x = -HORIZONTALSPEED;
+        }
+
+        if(KeyboardInput.instance.rightPressed){
+                this.velocity.x = HORIZONTALSPEED;
+        }
+
+        this.moveHorizontal();
         this.moveVertical();
         this.position.addUp(this.velocity);
+    }
+
+    private void moveHorizontal() {
+        BoxCollider nextBoxCollider = this.boxCollider.shift( this.velocity.x, 0);
+
+        Wall wall = GameObjectManager.instance.checkCollision(nextBoxCollider,Wall.class);
+
+        if(wall !=null){
+            boolean moveContinue = true;
+            float shiftDistance = this.velocity.x/Math.abs(this.velocity.x);
+            while(moveContinue) {
+                if(GameObjectManager.instance.checkCollision(this.boxCollider.shift(shiftDistance, 0),Platform.class) !=null){
+                    moveContinue = false;
+                }
+                else{
+                    shiftDistance += this.velocity.x/Math.abs(this.velocity.x);
+                    this.position.addUp(this.velocity.x/Math.abs(this.velocity.x),0);
+                }
+            }
+            this.velocity.x = 0;
+        }
+
     }
 
     private void moveVertical(){
@@ -47,6 +80,7 @@ public class Player extends GameObject implements PhysicBody {
 //        System.out.println("nextBox:" + nextBoxCollider.position.y);
 
         Platform platform = GameObjectManager.instance.checkCollision(nextBoxCollider,Platform.class);
+        Wall wall = GameObjectManager.instance.checkCollision(nextBoxCollider,Wall.class);
 
         if(platform !=null){
             boolean moveContinue = true;
@@ -63,6 +97,13 @@ public class Player extends GameObject implements PhysicBody {
             }
             this.velocity.y = 0;
         }
+        else if(wall != null){
+            this.velocity.y =0;
+//            KeyboardInput.instance.collide = true;
+//            KeyboardInput.instance.upPressed = false;
+
+        }
+
 
     }
 
