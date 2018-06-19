@@ -7,11 +7,12 @@ import renderer.ImageRenderer;
 import java.awt.*;
 
 public class Background extends GameObject {
-
+    public final int MAPWIDTH= 1600;
+    public final int MAPHEIGHT= 600;
 
     public Background() {
 
-        this.renderer = new BackgroundRenderer(Color.BLACK, 1200,800 );
+        this.renderer = new BackgroundRenderer(Color.BLACK,MAPWIDTH,MAPHEIGHT);
     }
 
     @Override

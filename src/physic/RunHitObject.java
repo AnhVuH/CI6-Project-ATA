@@ -6,7 +6,7 @@ import base.GameObjectManager;
 import java.util.Arrays;
 import java.util.List;
 
-public class RunHitObject<B extends GameObject & PhysicBody> {
+public class RunHitObject <B extends GameObject & PhysicBody> {
     private List<Class<B>> list;
 
     public RunHitObject(Class<B>... classes) { // Class<B>[]

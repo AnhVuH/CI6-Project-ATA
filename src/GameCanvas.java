@@ -1,7 +1,7 @@
 import base.GameObjectManager;
+import base.Vector2D;
 import game.Background;
-import game.Player;
-import input.KeyboardInput;
+import game.player.Player;
 import maps.Map;
 
 import javax.swing.*;
@@ -9,25 +9,33 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class GameCanvas extends JPanel {
-    BufferedImage backBuffered;
-    Graphics graphics;
-    Player player;
+    public final int MAPWIDTH= 1600;
+    public final int MAPHEIGHT= 600;
+    public Vector2D position;
+
+    private  BufferedImage backBuffered;
+    private Graphics graphics;
+    public Player player;
+    public ViewPort viewPort;
 
     public GameCanvas(){
-        this.setSize(1200,800 );
+        this.position = new Vector2D();
+        this.setSize(MAPWIDTH,MAPHEIGHT);
         this.setupBackBuffered();
         this.setupCharacter();
         this.addPlatform();
         this.setVisible(true);
+        this.viewPort = new ViewPort();
     }
 
     @Override
     protected void paintComponent(Graphics g) {
-        g.drawImage(backBuffered,0 ,0 ,null );
+        Graphics2D graphics2D = (Graphics2D)g;
+        graphics2D.drawImage(backBuffered,0 ,0 ,null );
     }
 
     private void setupBackBuffered(){
-        this.backBuffered = new BufferedImage(1200,800 ,BufferedImage.TYPE_4BYTE_ABGR );
+        this.backBuffered = new BufferedImage(MAPWIDTH,MAPHEIGHT ,BufferedImage.TYPE_4BYTE_ABGR );
         this.graphics = this.backBuffered.getGraphics();
     }
 
@@ -46,12 +54,12 @@ public class GameCanvas extends JPanel {
 
     public void renderAll(){
         GameObjectManager.instance.renderAll(this.graphics);
+        viewPort.translate((Graphics2D)this.graphics);
         this.repaint();
     }
 
     public void runAll(){
         GameObjectManager.instance.runAll();
-//        KeyboardInput.instance.reset();
 
     }
 
