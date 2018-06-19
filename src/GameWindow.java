@@ -1,3 +1,4 @@
+import base.GameObjectManager;
 import input.KeyboardInput;
 
 import javax.swing.*;

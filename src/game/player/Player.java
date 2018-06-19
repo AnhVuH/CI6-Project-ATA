@@ -3,6 +3,7 @@ package game.player;
 import base.FrameCounter;
 import base.GameObject;
 
+import base.GameObjectManager;
 import base.Vector2D;
 import game.Platform;
 import physic.BoxCollider;
@@ -15,8 +16,7 @@ public class Player extends GameObject implements PhysicBody {
     private PlayerMove playerMove;
     protected BoxCollider boxCollider;
     public RunHitObject runHitObject;
-    protected boolean hitPlatformX = false;
-    protected boolean hitPlatformY = false;
+
 
 
     public Player(){
@@ -29,14 +29,6 @@ public class Player extends GameObject implements PhysicBody {
 
     public void run(){
         this.boxCollider.position.set(this.position.x-this.boxCollider.getWidth()/2, this.position.y- this.boxCollider.getHeight()/2);
-//        if(this.hitPlatformX){
-//            this.boxCollider.position.set(this.boxCollider.position.addUp(Math.signum(this.velocity.x)*2, 0)) ;
-//            System.out.println(this.boxCollider.position.x);
-//        }
-//        if(this.hitPlatformY){
-//            this.boxCollider.position.set(this.boxCollider.position.addUp(0,Math.signum(this.velocity.y)*2)) ;
-////            System.out.println(this.boxCollider.position.y);
-//        }
         this.playerMove.run(this);
         this.runHitObject.run(this);
 
@@ -51,8 +43,11 @@ public class Player extends GameObject implements PhysicBody {
 
     @Override
     public void getHit(GameObject gameObject) {
-        System.out.println("hit");
-        this.isAlive = false;
+        if(gameObject instanceof Platform){
+            this.isAlive = false;
+            DeadPlayer  deadPlayer =GameObjectManager.instance.recycle(DeadPlayer.class);
+            deadPlayer.position.set(this.position);
+        }
 
     }
 }

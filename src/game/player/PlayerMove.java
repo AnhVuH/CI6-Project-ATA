@@ -52,7 +52,7 @@ public class PlayerMove {
             while (moveContinue) {
                 if (GameObjectManager.instance.checkCollision(player.boxCollider.shift(shiftDistance, 0), Platform.class) != null) {
                     moveContinue = false;
-                    player.hitPlatformX = true;
+                    player.boxCollider.position.set(player.boxCollider.position.add(Math.signum(shiftDistance), 0)) ;
                 } else {
                     shiftDistance += Math.signum(player.velocity.x);
                     player.position.addUp(Math.signum(player.velocity.x), 0);
@@ -75,7 +75,7 @@ public class PlayerMove {
             while (moveContinue ) {
                 if (GameObjectManager.instance.checkCollision(player.boxCollider.shift(0, shiftDistance), Platform.class) != null) {
                     moveContinue = false;
-                    player.hitPlatformY = true;
+                    player.boxCollider.position.set(player.boxCollider.position.addUp(0,Math.signum(shiftDistance))) ;
 
                 } else {
                     shiftDistance += Math.signum(player.velocity.y );
