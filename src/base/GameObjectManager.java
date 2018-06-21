@@ -1,5 +1,7 @@
 package base;
 
+import game.Platform;
+import game.player.Player;
 import physic.BoxCollider;
 import physic.PhysicBody;
 
@@ -38,6 +40,13 @@ public class GameObjectManager {
                 .filter(gameObject -> gameObject.isAlive)
                 .forEach(gameObject -> gameObject.render(graphics));
     }
+    public Player findPlayer() {
+        return (Player) this.list
+                .stream()
+                .filter(gameObject -> gameObject instanceof Player)
+                .findFirst()
+                .orElse(null);
+    }
 
 
 
@@ -55,13 +64,18 @@ public class GameObjectManager {
 
         }
 
-        public <T extends GameObject> T recycle(Class<T> cls){
-            T object = (T)this.list
-                    .stream()
-                    .filter(gameObject -> !gameObject.isAlive)
+        public  <T extends GameObject> T findObjectAlive(Class<T> cls){
+            return (T) this.list.stream()
+                    .filter(gameObject -> gameObject.isAlive)
                     .filter(gameObject -> cls.isInstance(gameObject))
                     .findFirst()
                     .orElse(null);
+        }
+
+
+
+        public <T extends GameObject> T recycle(Class<T> cls){
+            T object = this.findObjectAlive(cls);
             if (object!= null){
                 object.isAlive = true;
             }
@@ -76,5 +90,12 @@ public class GameObjectManager {
             return object;
 
         }
+
+    public void clear(){
+        this.list.clear();
+        this.tempList.clear();
+//        System.out.println(this.findObjectAlive(Platform.class));
+    }
+
 
 }

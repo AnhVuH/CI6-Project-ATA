@@ -7,21 +7,31 @@ import base.GameObjectManager;
 import base.Vector2D;
 import game.Platform;
 
+import game.Station;
 import physic.BoxCollider;
 import physic.PhysicBody;
 
+import physic.RunHitObject;
 import renderer.ImageRenderer;
+import scene.GameOverScene;
+import scene.GamePlayScene1;
+import scene.SceneManager;
 
 public class DeadPlayer extends GameObject implements PhysicBody {
     private final float GRAVITY = 1f;
     protected Vector2D velocity;
     protected BoxCollider boxCollider;
+    private DeadPlayerCheckMove deadPlayerCheckMove;
     private FrameCounter frameCounter;
+    private RunHitObject runHitObject;
+
     public DeadPlayer(){
         this.velocity = new Vector2D();
-        this.renderer = new ImageRenderer("assets/images/white_square_tiny.png",10,10);
+        this.renderer = new ImageRenderer("assets/images/yellow_square.jpg",10,10);
         this.boxCollider = new BoxCollider(10,10);
+        this.deadPlayerCheckMove = new DeadPlayerCheckMove();
         this.frameCounter = new FrameCounter(10);
+        this.runHitObject = new RunHitObject(Platform.class, Station.class);
     }
 
 
@@ -31,38 +41,21 @@ public class DeadPlayer extends GameObject implements PhysicBody {
             this.velocity.y += GRAVITY;
             this.frameCounter.reset();
         }
-        this.moveVertical(this);
+        this.deadPlayerCheckMove.run(this);
+        this.runHitObject.run(this);
     }
 
-    private void moveVertical(DeadPlayer player) {
-        BoxCollider nextBoxCollider = player.boxCollider.shift(0, player.velocity.y);
 
-        Platform platform = GameObjectManager.instance.checkCollision(nextBoxCollider, Platform.class);
 
-        if (platform != null) {
-            boolean moveContinue = true;
-            float shiftDistance = Math.signum(player.velocity.y );
-            while (moveContinue ) {
-                if (GameObjectManager.instance.checkCollision(player.boxCollider.shift(0, shiftDistance), Platform.class) != null) {
-                    moveContinue = false;
-
-                } else {
-                    shiftDistance += Math.signum(player.velocity.y );
-                    player.position.addUp(0, Math.signum(player.velocity.y ));
-                }
-            }
-            player.velocity.y = 0;
-        }
-        player.position.y += player.velocity.y;
-    }
 
     @Override
     public BoxCollider getBoxCollider() {
-        return null;
+        return this.boxCollider;
     }
 
     @Override
     public void getHit(GameObject gameObject) {
+        SceneManager.instance.changeScene(new GameOverScene());
 
     }
 }

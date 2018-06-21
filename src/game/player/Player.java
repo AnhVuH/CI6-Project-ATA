@@ -1,11 +1,12 @@
 package game.player;
 
-import base.FrameCounter;
+
 import base.GameObject;
 
 import base.GameObjectManager;
 import base.Vector2D;
 import game.Platform;
+import game.Station;
 import physic.BoxCollider;
 import physic.PhysicBody;
 import physic.RunHitObject;
@@ -24,7 +25,7 @@ public class Player extends GameObject implements PhysicBody {
         this.renderer = new ImageRenderer("assets/images/white_square_tiny.png",10,10);
         this.boxCollider = new BoxCollider(10,10);
         this.playerMove = new PlayerMove();
-        this.runHitObject = new RunHitObject(Platform.class);
+        this.runHitObject = new RunHitObject(Platform.class,Station.class);
     }
 
     public void run(){
@@ -33,7 +34,6 @@ public class Player extends GameObject implements PhysicBody {
         this.runHitObject.run(this);
 
     }
-
 
 
     @Override
@@ -45,8 +45,11 @@ public class Player extends GameObject implements PhysicBody {
     public void getHit(GameObject gameObject) {
         if(gameObject instanceof Platform){
             this.isAlive = false;
-            DeadPlayer  deadPlayer =GameObjectManager.instance.recycle(DeadPlayer.class);
+            DeadPlayer deadPlayer = GameObjectManager.instance.recycle(DeadPlayer.class);
             deadPlayer.position.set(this.position);
+        }
+        else if(gameObject instanceof Station){
+            System.out.println("safe");
         }
 
     }

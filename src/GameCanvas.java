@@ -1,31 +1,33 @@
 import base.GameObjectManager;
 import base.Vector2D;
-import game.Background;
-import game.player.Player;
-import maps.Map;
+import constant.Constant;
+import scene.GamePlayScene1;
+import scene.SceneManager;
+import viewport.ChangeViewPort;
+import viewport.ViewPort;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class GameCanvas extends JPanel {
-    public final int MAPWIDTH= 1600;
-    public final int MAPHEIGHT= 600;
     public Vector2D position;
 
     private  BufferedImage backBuffered;
     private Graphics graphics;
-    public Player player;
     public ViewPort viewPort;
+    public ChangeViewPort changeViewPort;
 
     public GameCanvas(){
         this.position = new Vector2D();
-        this.setSize(MAPWIDTH,MAPHEIGHT);
+        this.setSize(Constant.Canvas.WIDTH,Constant.Canvas.HEIGHT);
         this.setupBackBuffered();
-        this.setupCharacter();
-        this.addPlatform();
+
+        SceneManager.instance.changeScene(new GamePlayScene1());
+
         this.setVisible(true);
         this.viewPort = new ViewPort();
+        this.changeViewPort = new ChangeViewPort();
     }
 
     @Override
@@ -35,20 +37,8 @@ public class GameCanvas extends JPanel {
     }
 
     private void setupBackBuffered(){
-        this.backBuffered = new BufferedImage(MAPWIDTH,MAPHEIGHT ,BufferedImage.TYPE_4BYTE_ABGR );
+        this.backBuffered = new BufferedImage(Constant.Canvas.WIDTH,Constant.Canvas.HEIGHT ,BufferedImage.TYPE_4BYTE_ABGR );
         this.graphics = this.backBuffered.getGraphics();
-    }
-
-    private void setupCharacter(){
-        GameObjectManager.instance.recycle(Background.class);
-        this.player = GameObjectManager.instance.recycle(Player.class);
-        this.player.position.set(500,100);
-
-    }
-
-    private void addPlatform(){
-        Map map = Map.load("assets/maps/Map.json");
-        map.generate();
     }
 
 
@@ -61,6 +51,9 @@ public class GameCanvas extends JPanel {
     public void runAll(){
         GameObjectManager.instance.runAll();
 
+        SceneManager.instance.performChangeSceneIfNeeded();
+
+        this.changeViewPort.run(this.viewPort);
     }
 
 

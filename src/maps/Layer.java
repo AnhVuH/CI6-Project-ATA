@@ -11,9 +11,9 @@ public class Layer {
     private int height;
 
     public void generate() {
-        for(int tileY =0; tileY <height; tileY++){
-            for(int tileX =0; tileX<width; tileX++){
-                int mapData = data.get(tileY * width + tileX);
+        for(int tileY =0; tileY < this.height; tileY++){
+            for(int tileX =0; tileX< this.width; tileX++){
+                int mapData = data.get(tileY * this.width + tileX);
                 if(mapData !=0){
                     Platform platform = new Platform();
                     platform.position.set(tileX*20+10,tileY*20+10);
