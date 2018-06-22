@@ -29,7 +29,6 @@ public class PlayerMove {
             this.frameCounter.reset();
         }
 
-
         player.velocity.x = 0;
 
         if (KeyboardInput.instance.leftPressed ) {

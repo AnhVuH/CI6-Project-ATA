@@ -5,6 +5,7 @@ import base.GameObject;
 
 import base.GameObjectManager;
 import base.Vector2D;
+import constant.Constant;
 import game.Platform;
 
 import game.Station;
@@ -27,8 +28,8 @@ public class DeadPlayer extends GameObject implements PhysicBody {
 
     public DeadPlayer(){
         this.velocity = new Vector2D();
-        this.renderer = new ImageRenderer("assets/images/yellow_square.jpg",10,10);
-        this.boxCollider = new BoxCollider(10,10);
+        this.renderer = new ImageRenderer("assets/images/yellow_square.jpg",Constant.Player.PLAYER_WIDTH,Constant.Player.PLAYER_HEIGHT);
+        this.boxCollider = new BoxCollider(Constant.Player.PLAYER_WIDTH,Constant.Player.PLAYER_HEIGHT);
         this.deadPlayerCheckMove = new DeadPlayerCheckMove();
         this.frameCounter = new FrameCounter(10);
         this.runHitObject = new RunHitObject(Platform.class, Station.class);
