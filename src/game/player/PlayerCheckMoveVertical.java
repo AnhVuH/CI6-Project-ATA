@@ -17,11 +17,14 @@ public class PlayerCheckMoveVertical {
         BoxCollider nextBoxCollider = player.boxCollider.shift(0, player.velocity.y);
         if(GameObjectManager.instance.checkCollision(nextBoxCollider, cls) !=null){
             boolean moveContinue = true;
+
+            player.playerMove.curentVelocity.y = player.velocity.y;
+
             float shiftDistance = Math.signum(player.velocity.y );
             while (moveContinue ) {
                 if (GameObjectManager.instance.checkCollision(player.boxCollider.shift(0, shiftDistance), cls) != null) {
                     moveContinue = false;
-                    player.boxCollider.position.set(player.boxCollider.position.addUp(0,Math.signum(shiftDistance))) ;
+                   player.boxCollider.position.addUp(0,shiftDistance);
 
                 } else {
                     shiftDistance += Math.signum(player.velocity.y );

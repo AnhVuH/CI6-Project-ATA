@@ -15,10 +15,9 @@ import renderer.ImageRenderer;
 
 public class Player extends GameObject implements PhysicBody {
     protected Vector2D velocity;
-    private PlayerMove playerMove;
+    protected PlayerMove playerMove;
     protected BoxCollider boxCollider;
     public RunHitObject runHitObject;
-
 
 
     public Player(){
@@ -47,8 +46,11 @@ public class Player extends GameObject implements PhysicBody {
             this.isAlive = false;
             DeadPlayer deadPlayer = GameObjectManager.instance.recycle(DeadPlayer.class);
             deadPlayer.position.set(this.position);
+            System.out.println(playerMove.curentVelocity.y);
         }
         else if(gameObject instanceof Station){
+            System.out.println(playerMove.curentVelocity.x);
+            System.out.println(playerMove.curentVelocity.y);
             System.out.println("safe");
         }
 

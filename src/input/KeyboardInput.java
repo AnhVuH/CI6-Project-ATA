@@ -41,10 +41,12 @@ public class KeyboardInput implements KeyListener {
     public void keyPressed(KeyEvent e) {
         if(e.getKeyCode() == KeyEvent.VK_LEFT){
             this.leftPressed = true;
+//            this.upPressed = false;
         }
 
         if(e.getKeyCode() ==KeyEvent.VK_RIGHT){
             this.rightPressed =true;
+//            this.upPressed = false;
         }
 
         if(e.getKeyCode() ==KeyEvent.VK_UP){

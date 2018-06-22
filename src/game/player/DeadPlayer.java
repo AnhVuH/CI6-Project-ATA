@@ -18,7 +18,7 @@ import scene.GameOverScene;
 import scene.GamePlayScene1;
 import scene.SceneManager;
 
-public class DeadPlayer extends GameObject implements PhysicBody {
+public class DeadPlayer extends Player implements PhysicBody {
     private final float GRAVITY = 1f;
     protected Vector2D velocity;
     protected BoxCollider boxCollider;
@@ -28,7 +28,7 @@ public class DeadPlayer extends GameObject implements PhysicBody {
 
     public DeadPlayer(){
         this.velocity = new Vector2D();
-        this.renderer = new ImageRenderer("assets/images/yellow_square.jpg",Constant.Player.PLAYER_WIDTH,Constant.Player.PLAYER_HEIGHT);
+        this.renderer = new ImageRenderer("assets/maps/ATA-MAPS/ufo.png",Constant.Player.PLAYER_WIDTH,Constant.Player.PLAYER_HEIGHT);
         this.boxCollider = new BoxCollider(Constant.Player.PLAYER_WIDTH,Constant.Player.PLAYER_HEIGHT);
         this.deadPlayerCheckMove = new DeadPlayerCheckMove();
         this.frameCounter = new FrameCounter(10);

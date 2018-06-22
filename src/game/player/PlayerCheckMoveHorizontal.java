@@ -15,14 +15,14 @@ public class PlayerCheckMoveHorizontal {
 
     private void checkMove(Player player,Class cls){
         BoxCollider nextBoxCollider = player.boxCollider.shift(player.velocity.x, 0);
-
         if (GameObjectManager.instance.checkCollision(nextBoxCollider, cls) != null) {
+            player.playerMove.curentVelocity.x = player.velocity.x;
             boolean moveContinue = true;
             float shiftDistance = Math.signum(player.velocity.x);
             while (moveContinue) {
                 if (GameObjectManager.instance.checkCollision(player.boxCollider.shift(shiftDistance, 0), cls) != null) {
                     moveContinue = false;
-                    player.boxCollider.position.set(player.boxCollider.position.add(Math.signum(shiftDistance), 0)) ;
+                    player.boxCollider.position.addUp(shiftDistance, 0) ;
                 } else {
                     shiftDistance += Math.signum(player.velocity.x);
                     player.position.addUp(Math.signum(player.velocity.x), 0);

@@ -21,11 +21,11 @@ public class DeadPlayerCheckMove {
             while (moveContinue ) {
                 if (GameObjectManager.instance.checkCollision(player.boxCollider.shift(0, shiftDistance), cls) != null) {
                     moveContinue = false;
-                    player.boxCollider.position.set(player.boxCollider.position.addUp(0,Math.signum(shiftDistance))) ;
+                    player.boxCollider.position.addUp(0,shiftDistance) ;
 
                 } else {
                     shiftDistance += 1;
-                    player.position.addUp(0, Math.signum(player.velocity.y ));
+                    player.position.addUp(0, 1);
                 }
             }
             player.velocity.y = 0;

@@ -10,8 +10,8 @@ public class Station extends GameObject implements PhysicBody {
     public BoxCollider boxCollider;
     public Station(){
         this.position = new Vector2D();
-        this.renderer = new ImageRenderer("assets/images/grey_rect.png", 100, 40);
-        this.boxCollider = new BoxCollider(100, 40);
+        this.renderer = new ImageRenderer("assets/images/grey_rect.png", 100, 50);
+        this.boxCollider = new BoxCollider(100, 50);
     }
 
     @Override

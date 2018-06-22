@@ -13,7 +13,7 @@ public class GamePlayScene1 implements Scene{
         GameObjectManager.instance.recycle(Background.class);
 
         Player player = GameObjectManager.instance.recycle(Player.class);
-        player.position.set(100,80);
+        player.position.set(200,80);
 
         Station station = GameObjectManager.instance.recycle(Station.class);
         station.position.set(1000, 500);

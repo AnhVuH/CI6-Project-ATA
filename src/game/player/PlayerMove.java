@@ -2,6 +2,7 @@ package game.player;
 
 import base.FrameCounter;
 
+import base.Vector2D;
 import constant.Constant;
 import input.KeyboardInput;
 
@@ -11,6 +12,7 @@ public class PlayerMove {
     private final float HORIZONTAL_SPEED = Constant.Speed.HORIZONTAL_SPEED;
     private PlayerCheckMoveVertical playerCheckMoveVertical;
     private PlayerCheckMoveHorizontal playerCheckMoveHorizontal;
+    public Vector2D curentVelocity;
 
     private FrameCounter frameCounter;
 
@@ -18,6 +20,7 @@ public class PlayerMove {
         this.frameCounter = new FrameCounter(Constant.Speed.DELAY_VERTICAL);
         this.playerCheckMoveHorizontal = new PlayerCheckMoveHorizontal();
         this.playerCheckMoveVertical = new PlayerCheckMoveVertical();
+        this.curentVelocity = new Vector2D();
     }
 
     public void run(Player player) {
@@ -28,7 +31,7 @@ public class PlayerMove {
             }
             this.frameCounter.reset();
         }
-
+//        System.out.println(player.velocity.y);
         player.velocity.x = 0;
 
         if (KeyboardInput.instance.leftPressed ) {
@@ -38,6 +41,7 @@ public class PlayerMove {
         if (KeyboardInput.instance.rightPressed) {
             player.velocity.x = HORIZONTAL_SPEED;
         }
+
         this.playerCheckMoveHorizontal.run(player);
         this.playerCheckMoveVertical.run(player);
     }
