@@ -18,6 +18,7 @@ public class PlayerMove {
 
     public PlayerMove() {
         this.frameCounter = new FrameCounter(Constant.Speed.DELAY_VERTICAL);
+
         this.playerCheckMoveHorizontal = new PlayerCheckMoveHorizontal();
         this.playerCheckMoveVertical = new PlayerCheckMoveVertical();
         this.curentVelocity = new Vector2D();
@@ -31,16 +32,18 @@ public class PlayerMove {
             }
             this.frameCounter.reset();
         }
-//        System.out.println(player.velocity.y);
+
         player.velocity.x = 0;
 
-        if (KeyboardInput.instance.leftPressed ) {
-            player.velocity.x = -HORIZONTAL_SPEED;
-        }
+            if (KeyboardInput.instance.leftPressed ) {
+                player.velocity.x = -HORIZONTAL_SPEED;
+            }
 
-        if (KeyboardInput.instance.rightPressed) {
-            player.velocity.x = HORIZONTAL_SPEED;
-        }
+            if (KeyboardInput.instance.rightPressed) {
+                player.velocity.x = HORIZONTAL_SPEED;
+            }
+
+
 
         this.playerCheckMoveHorizontal.run(player);
         this.playerCheckMoveVertical.run(player);

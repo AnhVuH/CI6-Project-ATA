@@ -46,12 +46,20 @@ public class Player extends GameObject implements PhysicBody {
             this.isAlive = false;
             DeadPlayer deadPlayer = GameObjectManager.instance.recycle(DeadPlayer.class);
             deadPlayer.position.set(this.position);
-            System.out.println(playerMove.curentVelocity.y);
         }
         else if(gameObject instanceof Station){
-            System.out.println(playerMove.curentVelocity.x);
-            System.out.println(playerMove.curentVelocity.y);
-            System.out.println("safe");
+            if(playerMove.curentVelocity.x !=0 || playerMove.curentVelocity.y >Constant.Speed.DEAD_VELOCIY){
+                System.out.println(playerMove.curentVelocity.x);
+                System.out.println(playerMove.curentVelocity.y);
+                this.isAlive = false;
+                DeadPlayer deadPlayer = GameObjectManager.instance.recycle(DeadPlayer.class);
+                deadPlayer.position.set(this.position);
+            }
+            else{
+                System.out.println(playerMove.curentVelocity.y);
+                System.out.println("safe");
+            }
+
         }
 
     }

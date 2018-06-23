@@ -13,9 +13,10 @@ public class Constant {
 
     public static class Speed{
         public static final float GRAVITY = 1.5f;
-        public static final float FLY_SPEED =2f;
+        public static final float FLY_SPEED = 2f;
         public static final float HORIZONTAL_SPEED = 2.5f;
-        public static final int DELAY_VERTICAL = 8;
+        public static final int DELAY_VERTICAL = 6;
+        public static final float DEAD_VELOCIY = 3.5f;
 
     }
 
