@@ -10,6 +10,8 @@ import renderer.ImageRenderer;
 public class Platform extends GameObject implements PhysicBody {
 
     private BoxCollider boxCollider;
+    public String name;
+
     public Platform() {
         this.renderer = new ImageRenderer("assets/images/green_square.png", Constant.Tile.TILE_WIDTH, Constant.Tile.TILE_HEIGHT);
         this.boxCollider = new BoxCollider(Constant.Tile.TILE_WIDTH, Constant.Tile.TILE_HEIGHT );

@@ -1,51 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" tiledversion="2018.06.01" orientation="orthogonal" renderorder="right-down" width="60" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="2" nextobjectid="1">
- <tileset firstgid="1" source="tile_00.tsx"/>
- <tileset firstgid="2" source="tile_07.tsx"/>
- <tileset firstgid="3" source="tile_28.tsx"/>
- <tileset firstgid="4" source="tile_05.tsx"/>
- <tileset firstgid="5" source="tile_03.tsx"/>
- <tileset firstgid="6" source="tile_01.tsx"/>
- <tileset firstgid="7" source="tile_27.tsx"/>
- <tileset firstgid="8" source="tile_08.tsx"/>
- <tileset firstgid="9" source="tile_23.tsx"/>
- <tileset firstgid="10" source="tile_54.tsx"/>
- <tileset firstgid="11" source="tile_02.tsx"/>
- <tileset firstgid="12" source="tile_21.tsx"/>
- <tileset firstgid="13" source="tile_47.tsx"/>
- <tileset firstgid="14" source="tile_49.tsx"/>
- <tileset firstgid="15" source="tile_48.tsx"/>
- <tileset firstgid="16" source="tile_04.tsx"/>
- <tileset firstgid="17" source="tile_45.tsx"/>
- <tileset firstgid="18" source="tile_44.tsx"/>
- <tileset firstgid="19" source="tile_25.tsx"/>
- <tileset firstgid="20" source="tile_52.tsx"/>
- <tileset firstgid="21" source="tile_24.tsx"/>
- <tileset firstgid="22" source="tile_20.tsx"/>
- <tileset firstgid="23" source="tile_62.tsx"/>
- <tileset firstgid="24" source="tile_53.tsx"/>
- <layer id="1" name="Tile Layer 1" width="60" height="20">
+ <tileset firstgid="1" name="tile_00" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_00.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="2" name="tile_07" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_07.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="3" name="tile_05" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_05.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="4" name="tile_03" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_03.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="5" name="tile_01" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_01.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="6" name="tile_27" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_27.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="7" name="tile_08" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_08.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="8" name="Fall-Platform" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_23.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="9" name="tile_54" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_54.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="10" name="tile_02" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_02.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="11" name="tile_21" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_21.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="12" name="tile_47" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_47.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="13" name="tile_49" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_49.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="14" name="tile_48" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_48.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="15" name="tile_04" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_04.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="16" name="tile_45" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_45.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="17" name="Gift-station" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_44.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="18" name="tile_25" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_25.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="19" name="tile_52" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_52.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="20" name="tile_24" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_24.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="21" name="tile_20" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <grid orientation="orthogonal" width="15" height="15"/>
+  <image source="Tiles 32x32/separate png/tile_20.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="22" name="tile_62" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_62.png" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="23" name="tile_53" tilewidth="32" tileheight="32" tilecount="1" columns="1">
+  <image source="Tiles 32x32/separate png/tile_53.png" width="32" height="32"/>
+ </tileset>
+ <layer id="1" name="Tile Layer 1" width="60" height="20" offsetx="17" offsety="16">
   <data encoding="csv">
-4,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,5,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,18,18,0,0,0,5,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,5,
-4,0,11,1,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16,16,16,16,0,0,5,
-4,0,10,7,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,9,0,0,0,5,
-4,0,0,9,0,0,0,0,0,0,0,0,0,17,17,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,18,18,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,
-4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,
-16,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,16,
-14,13,15,14,13,15,14,13,15,14,13,15,14,13,15,14,13,15,14,13,15,14,13,15,14,13,15,14,13,15,14,13,15,14,13,15,14,13,15,14,13,15,14,13,15,14,13,15,14,13,15,14,13,15,14,13,15,14,13,15
+3,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,4,
+3,0,0,0,0,0,0,0,0,0,0,0,9,15,15,15,7,0,0,0,0,0,0,0,0,9,15,15,15,15,7,0,0,0,0,9,15,15,15,15,15,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,
+3,0,0,0,0,0,0,0,0,0,0,0,0,9,15,7,0,0,0,0,0,0,0,0,0,0,9,15,15,7,0,0,0,0,0,0,9,15,15,15,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,
+3,0,0,0,0,0,0,0,0,0,0,0,0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,8,8,0,0,0,0,0,0,0,0,8,8,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,
+3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,
+3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,
+3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,4,
+3,0,10,1,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,15,15,7,0,0,0,0,0,0,4,
+3,0,9,6,7,0,0,0,0,0,0,0,0,0,0,0,0,0,16,17,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,8,0,0,0,0,0,0,0,4,
+3,0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,
+3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,
+3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,
+3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16,17,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16,17,16,0,0,0,4,
+3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,
+3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,
+3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,
+3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,
+3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,
+15,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,15,
+13,12,14,13,12,14,13,12,14,13,12,14,13,12,14,13,12,14,13,12,14,13,12,14,13,12,14,13,12,14,13,12,14,13,12,14,13,12,14,13,12,14,13,12,14,13,12,14,13,12,14,13,12,14,13,12,14,13,12,14
 </data>
  </layer>
 </map>

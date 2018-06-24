@@ -21,7 +21,6 @@ public class GamePlayScene1 implements Scene{
     }
 
     private void addPlatform(){
-//        Map map = Map.load("assets/maps/ATA-MAPS/atamap..json");
         Map map = Map.load("assets/maps/ATA-MAPS/atamap1.json");
         map.generate();
     }
