@@ -3,10 +3,9 @@ package game.player;
 import base.FrameCounter;
 import base.GameObject;
 
-import base.GameObjectManager;
 import base.Vector2D;
 import constant.Constant;
-import game.Platform;
+import game.platform.Platform;
 
 import game.Station;
 import physic.BoxCollider;
@@ -15,7 +14,6 @@ import physic.PhysicBody;
 import physic.RunHitObject;
 import renderer.ImageRenderer;
 import scene.GameOverScene;
-import scene.GamePlayScene1;
 import scene.SceneManager;
 
 public class DeadPlayer extends Player implements PhysicBody {

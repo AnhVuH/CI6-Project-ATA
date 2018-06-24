@@ -1,6 +1,6 @@
 package base;
 
-import game.Platform;
+import game.platform.Platform;
 import game.player.Player;
 import physic.BoxCollider;
 import physic.PhysicBody;
@@ -8,6 +8,7 @@ import physic.PhysicBody;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class GameObjectManager {
 
@@ -72,6 +73,19 @@ public class GameObjectManager {
                     .orElse(null);
         }
 
+        public List<Platform> findPlatformsByName(String name){
+            List<Platform> platformList = new ArrayList<>();
+            this.list
+                    .stream()
+                    .filter(gameObject -> gameObject instanceof Platform)
+                    .filter(gameObject -> ((Platform)gameObject).name.equals(name)
+                    )
+                    .forEach(gameObject -> {
+                        platformList.add((Platform)gameObject);
+
+                    });
+            return platformList;
+        }
 
 
         public <T extends GameObject> T recycle(Class<T> cls){

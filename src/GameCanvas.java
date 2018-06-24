@@ -50,10 +50,9 @@ public class GameCanvas extends JPanel {
 
     public void runAll(){
         GameObjectManager.instance.runAll();
-
         SceneManager.instance.performChangeSceneIfNeeded();
-
         this.changeViewPort.run(this.viewPort);
+
     }
 
 

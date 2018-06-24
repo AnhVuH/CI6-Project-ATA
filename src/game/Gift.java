@@ -1,6 +1,7 @@
 package game;
 
 import base.GameObject;
+import constant.Constant;
 import physic.BoxCollider;
 import physic.PhysicBody;
 import renderer.ImageRenderer;
@@ -8,8 +9,8 @@ import renderer.ImageRenderer;
 public class Gift extends GameObject implements PhysicBody {
     BoxCollider boxCollider;
     public Gift(){
-        this.renderer = new ImageRenderer("assets/images/yellow_square.jpg",30,30);
-        this.boxCollider = new BoxCollider(30,30);
+        this.renderer = new ImageRenderer("assets/images/yellow_square.jpg",Constant.Gift.GIFT_WIDTH,Constant.Gift.GIFT_HEIGTH);
+        this.boxCollider = new BoxCollider(Constant.Gift.GIFT_WIDTH,Constant.Gift.GIFT_HEIGTH);
 
     }
 

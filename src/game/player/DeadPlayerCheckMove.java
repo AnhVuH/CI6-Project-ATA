@@ -1,7 +1,7 @@
 package game.player;
 
 import base.GameObjectManager;
-import game.Platform;
+import game.platform.Platform;
 import game.Station;
 import physic.BoxCollider;
 

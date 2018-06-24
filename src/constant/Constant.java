@@ -29,4 +29,9 @@ public class Constant {
         public static final int PLAYER_WIDTH = 50;
         public static final int PLAYER_HEIGHT = 50;
     }
+
+    public static class Gift{
+        public static final int GIFT_WIDTH = 30;
+        public static final int GIFT_HEIGTH = 30;
+    }
 }

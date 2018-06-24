@@ -7,7 +7,7 @@ import base.GameObjectManager;
 import base.Vector2D;
 import constant.Constant;
 import game.Gift;
-import game.Platform;
+import game.platform.Platform;
 import game.Station;
 import physic.BoxCollider;
 import physic.PhysicBody;
@@ -50,8 +50,8 @@ public class Player extends GameObject implements PhysicBody {
         }
         else if(gameObject instanceof Station){
             if(playerMove.curentVelocity.x !=0 || playerMove.curentVelocity.y >Constant.Speed.DEAD_VELOCIY){
-                System.out.println(playerMove.curentVelocity.x);
-                System.out.println(playerMove.curentVelocity.y);
+//                System.out.println(playerMove.curentVelocity.x);
+//                System.out.println(playerMove.curentVelocity.y);
                 this.isAlive = false;
                 DeadPlayer deadPlayer = GameObjectManager.instance.recycle(DeadPlayer.class);
                 deadPlayer.position.set(this.position);
