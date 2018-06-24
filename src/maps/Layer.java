@@ -20,7 +20,7 @@ public class Layer {
                     if(firstgidOfTile !=null){
                         String pathTile = firstgidOfTile.findPath();
                         Platform platform = new Platform(pathTile,firstgidOfTile.name);
-                        platform.position.set(tileX*Constant.Tile.TILE_WIDTH + Constant.Tile.TILE_WIDTH /2,tileY*Constant.Tile.TILE_HEIGHT + Constant.Tile.TILE_HEIGHT/2);
+                        platform.position.set(tileX*Constant.Tile.WIDTH + Constant.Tile.WIDTH /2,tileY*Constant.Tile.HEIGHT + Constant.Tile.HEIGHT/2);
                         GameObjectManager.instance.add(platform);
                     }
 

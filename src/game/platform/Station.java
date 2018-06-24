@@ -1,7 +1,8 @@
-package game;
+package game.platform;
 
 import base.GameObject;
 import base.Vector2D;
+import constant.Constant;
 import physic.BoxCollider;
 import physic.PhysicBody;
 import renderer.ImageRenderer;
@@ -10,8 +11,8 @@ public class Station extends GameObject implements PhysicBody {
     public BoxCollider boxCollider;
     public Station(){
         this.position = new Vector2D();
-        this.renderer = new ImageRenderer("assets/images/grey_rect.png", 100, 50);
-        this.boxCollider = new BoxCollider(100, 50);
+        this.renderer = new ImageRenderer("assets/images/grey_rect.png", Constant.Station.WIDTH, Constant.Station.HEIGHT);
+        this.boxCollider = new BoxCollider(Constant.Station.WIDTH, Constant.Station.HEIGHT);
     }
 
     @Override

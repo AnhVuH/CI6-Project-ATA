@@ -4,14 +4,11 @@ package scene;
 import base.GameObject;
 import base.GameObjectManager;
 import game.Background;
-import game.Gift;
-import game.GiftSpawner;
-import game.Station;
-import game.platform.Platform;
+import game.gift.GiftSpawner;
+import game.platform.SetupStation;
+import game.platform.Station;
 import game.player.Player;
 import maps.Map;
-
-import java.util.List;
 
 
 public class GamePlayScene1 implements Scene{
@@ -20,10 +17,11 @@ public class GamePlayScene1 implements Scene{
         Player player = GameObjectManager.instance.recycle(Player.class);
         player.position.set(200,80);
 
-        Station station = GameObjectManager.instance.recycle(Station.class);
-        station.position.set(1000, 500);
+//        Station station = GameObjectManager.instance.recycle(Station.class);
+//        station.position.set(1000, 500);
 
         GameObjectManager.instance.recycle(GiftSpawner.class);
+        GameObjectManager.instance.recycle(SetupStation.class);
 
     }
 

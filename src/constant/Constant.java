@@ -21,17 +21,22 @@ public class Constant {
     }
 
     public static  class Tile{
-        public static final int TILE_WIDTH = 32;
-        public static final int TILE_HEIGHT = 32;
+        public static final int WIDTH = 32;
+        public static final int HEIGHT = 32;
     }
 
     public static class Player{
-        public static final int PLAYER_WIDTH = 50;
-        public static final int PLAYER_HEIGHT = 50;
+        public static final int WIDTH = 40;
+        public static final int HEIGHT = 40;
     }
 
     public static class Gift{
-        public static final int GIFT_WIDTH = 30;
-        public static final int GIFT_HEIGTH = 30;
+        public static final int WIDTH = 20;
+        public static final int HEIGHT= 20;
+    }
+
+    public static class Station{
+            public static final int WIDTH = 80;
+        public static final int HEIGHT= 20;
     }
 }

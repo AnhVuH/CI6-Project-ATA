@@ -7,7 +7,7 @@ import base.Vector2D;
 import constant.Constant;
 import game.platform.Platform;
 
-import game.Station;
+import game.platform.Station;
 import physic.BoxCollider;
 import physic.PhysicBody;
 
@@ -26,8 +26,8 @@ public class DeadPlayer extends Player implements PhysicBody {
 
     public DeadPlayer(){
         this.velocity = new Vector2D();
-        this.renderer = new ImageRenderer("assets/maps/ATA-MAPS/ufo-dead.png",Constant.Player.PLAYER_WIDTH,Constant.Player.PLAYER_HEIGHT);
-        this.boxCollider = new BoxCollider(Constant.Player.PLAYER_WIDTH,Constant.Player.PLAYER_HEIGHT);
+        this.renderer = new ImageRenderer("assets/maps/ATA-MAPS/ufo-dead.png",Constant.Player.WIDTH,Constant.Player.HEIGHT);
+        this.boxCollider = new BoxCollider(Constant.Player.WIDTH,Constant.Player.HEIGHT);
         this.deadPlayerCheckMove = new DeadPlayerCheckMove();
         this.frameCounter = new FrameCounter(10);
         this.runHitObject = new RunHitObject(Platform.class, Station.class);

@@ -1,7 +1,8 @@
-package game;
+package game.gift;
 
 import base.GameObject;
 import constant.Constant;
+import game.player.Player;
 import physic.BoxCollider;
 import physic.PhysicBody;
 import renderer.ImageRenderer;
@@ -9,8 +10,8 @@ import renderer.ImageRenderer;
 public class Gift extends GameObject implements PhysicBody {
     BoxCollider boxCollider;
     public Gift(){
-        this.renderer = new ImageRenderer("assets/images/yellow_square.jpg",Constant.Gift.GIFT_WIDTH,Constant.Gift.GIFT_HEIGTH);
-        this.boxCollider = new BoxCollider(Constant.Gift.GIFT_WIDTH,Constant.Gift.GIFT_HEIGTH);
+        this.renderer = new ImageRenderer("assets/images/yellow_square.jpg",Constant.Gift.WIDTH,Constant.Gift.HEIGHT);
+        this.boxCollider = new BoxCollider(Constant.Gift.WIDTH,Constant.Gift.HEIGHT);
 
     }
 
@@ -27,6 +28,9 @@ public class Gift extends GameObject implements PhysicBody {
 
     @Override
     public void getHit(GameObject gameObject) {
+        if(gameObject instanceof Player){
+            this.isAlive = false;
+        }
 
     }
 }

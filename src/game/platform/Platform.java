@@ -13,13 +13,13 @@ public class Platform extends GameObject implements PhysicBody {
     public String name;
 
 //    public Platform() {
-//        this.renderer = new ImageRenderer("assets/images/green_square.png", Constant.Tile.TILE_WIDTH, Constant.Tile.TILE_HEIGHT);
-//        this.boxCollider = new BoxCollider(Constant.Tile.TILE_WIDTH, Constant.Tile.TILE_HEIGHT );
+//        this.renderer = new ImageRenderer("assets/images/green_square.png", Constant.Tile.WIDTH, Constant.Tile.HEIGHT);
+//        this.boxCollider = new BoxCollider(Constant.Tile.WIDTH, Constant.Tile.HEIGHT );
 //    }
     public Platform(String path, String name) {
-        this.renderer = new ImageRenderer(path, Constant.Tile.TILE_WIDTH, Constant.Tile.TILE_HEIGHT);
+        this.renderer = new ImageRenderer(path, Constant.Tile.WIDTH, Constant.Tile.HEIGHT);
         this.name = name;
-        this.boxCollider = new BoxCollider(Constant.Tile.TILE_WIDTH, Constant.Tile.TILE_HEIGHT);
+        this.boxCollider = new BoxCollider(Constant.Tile.WIDTH, Constant.Tile.HEIGHT);
     }
 
     public void run(){

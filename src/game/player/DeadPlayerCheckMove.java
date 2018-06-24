@@ -2,7 +2,7 @@ package game.player;
 
 import base.GameObjectManager;
 import game.platform.Platform;
-import game.Station;
+import game.platform.Station;
 import physic.BoxCollider;
 
 public class DeadPlayerCheckMove {
