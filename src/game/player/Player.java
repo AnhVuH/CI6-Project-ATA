@@ -13,12 +13,15 @@ import physic.BoxCollider;
 import physic.PhysicBody;
 import physic.RunHitObject;
 import renderer.ImageRenderer;
+import scene.GameWinScene;
+import scene.SceneManager;
 
 public class Player extends GameObject implements PhysicBody {
     protected Vector2D velocity;
     protected PlayerMove playerMove;
     protected BoxCollider boxCollider;
     public RunHitObject runHitObject;
+
 
 
     public Player(){
@@ -66,6 +69,9 @@ public class Player extends GameObject implements PhysicBody {
                 }
                 else{
                     System.out.println("safe");
+                    if(GameObjectManager.instance.findObjectAlive(Gift.class)==null){
+                        SceneManager.instance.changeScene(new GameWinScene());
+                    }
                 }
 
             }
