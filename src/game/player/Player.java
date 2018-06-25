@@ -1,6 +1,7 @@
 package game.player;
 
 
+import action.ActionAdapter;
 import base.GameObject;
 
 import base.GameObjectManager;
@@ -8,6 +9,7 @@ import base.Vector2D;
 import constant.Constant;
 import game.gift.Gift;
 import game.platform.Platform;
+import game.platform.StartStation;
 import game.platform.Station;
 import physic.BoxCollider;
 import physic.PhysicBody;
@@ -32,10 +34,14 @@ public class Player extends GameObject implements PhysicBody {
         this.runHitObject = new RunHitObject(
                 Platform.class,
                 Station.class,
+                StartStation.class,
                 Gift.class);
     }
 
+
+
     public void run(){
+        super.run();
         this.boxCollider.position.set(this.position.x-this.boxCollider.getWidth()/2, this.position.y- this.boxCollider.getHeight()/2);
         this.playerMove.run(this);
         this.runHitObject.run(this);
@@ -54,7 +60,7 @@ public class Player extends GameObject implements PhysicBody {
             DeadPlayer deadPlayer = GameObjectManager.instance.recycle(DeadPlayer.class);
             deadPlayer.position.set(this.position);
         }
-        else if(gameObject instanceof Station|| gameObject instanceof Gift){
+        else if(gameObject instanceof Station|| gameObject instanceof Gift ||gameObject instanceof StartStation){
             if(playerMove.curentVelocity.x !=0 || playerMove.curentVelocity.y >Constant.Speed.DEAD_VELOCIY){
 //                System.out.println(playerMove.curentVelocity.x);
 //                System.out.println(playerMove.curentVelocity.y);
@@ -69,7 +75,7 @@ public class Player extends GameObject implements PhysicBody {
                 }
                 else{
                     System.out.println("safe");
-                    if(GameObjectManager.instance.findObjectAlive(Gift.class)==null){
+                    if(gameObject instanceof Station && GameObjectManager.instance.findObjectAlive(Gift.class)==null){
                         SceneManager.instance.changeScene(new GameWinScene());
                     }
                 }

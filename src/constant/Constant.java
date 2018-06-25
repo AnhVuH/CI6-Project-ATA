@@ -3,12 +3,12 @@ package constant;
 public class Constant {
     public static class Window{
         public static final int WIDTH = 900;
-        public static final int HEIGHT = 640;
+        public static final int HEIGHT = 720;
     }
 
     public static class Canvas{
         public static final int WIDTH = 1920;
-        public static final int HEIGHT =640;
+        public static final int HEIGHT =720;
     }
 
     public static class Speed{

@@ -2,6 +2,7 @@ package action;
 
 import base.GameObject;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -9,7 +10,8 @@ public class GroupAction implements Action {
     private List<Action> actions;
 
     public GroupAction(Action... actions){
-        this.actions = Arrays.asList(actions);
+//        this.actions = Arrays.asList(actions);
+        this.actions = new ArrayList<>(Arrays.asList(actions));
     }
 
     @Override

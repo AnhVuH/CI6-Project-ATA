@@ -7,9 +7,10 @@ import physic.BoxCollider;
 import physic.PhysicBody;
 import renderer.ImageRenderer;
 
-public class Station extends GameObject implements PhysicBody {
+public class StartStation  extends GameObject implements PhysicBody {
     public BoxCollider boxCollider;
-    public Station(){
+    public StartStation(){
+
         this.renderer = new ImageRenderer("assets/images/grey_rect.png", Constant.Station.WIDTH, Constant.Station.HEIGHT);
         this.boxCollider = new BoxCollider(Constant.Station.WIDTH, Constant.Station.HEIGHT);
     }
