@@ -1,7 +1,6 @@
 package game.player;
 
 
-import action.ActionAdapter;
 import base.GameObject;
 
 import base.GameObjectManager;
@@ -17,6 +16,8 @@ import physic.RunHitObject;
 import renderer.ImageRenderer;
 import scene.GameWinScene;
 import scene.SceneManager;
+import scene.SceneSpawner;
+import scene.setupScene.DisplayNumberOfGift;
 
 public class Player extends GameObject implements PhysicBody {
     protected Vector2D velocity;
@@ -29,6 +30,7 @@ public class Player extends GameObject implements PhysicBody {
     public Player(){
         this.velocity = new Vector2D();
         this.renderer = new ImageRenderer("assets/maps/ATA-MAPS/ufo.png",Constant.Player.WIDTH,Constant.Player.HEIGHT);
+//        this.renderer = new ImageRenderer("assets/images/_ufo__by_mrichston_zpsgr01l96i.gif",Constant.Player.WIDTH,Constant.Player.HEIGHT);
         this.boxCollider = new BoxCollider(Constant.Player.WIDTH,Constant.Player.HEIGHT);
         this.playerMove = new PlayerMove();
         this.runHitObject = new RunHitObject(
@@ -72,11 +74,13 @@ public class Player extends GameObject implements PhysicBody {
 //                System.out.println(playerMove.curentVelocity.y);
                 if(gameObject instanceof Gift){
                     System.out.println("take gift");
+                    GameObjectManager.instance.add(new DisplayNumberOfGift());
                 }
                 else{
                     System.out.println("safe");
                     if(gameObject instanceof Station && GameObjectManager.instance.findObjectAlive(Gift.class)==null){
-                        SceneManager.instance.changeScene(new GameWinScene());
+//                        SceneManager.instance.changeScene(new GameWinScene());
+                        new SceneSpawner();
                     }
                 }
 

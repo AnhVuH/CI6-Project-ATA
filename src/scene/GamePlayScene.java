@@ -4,32 +4,41 @@ package scene;
 import base.GameObjectManager;
 import game.Background;
 import scene.setupScene.GiftSpawner;
+import scene.setupScene.DisplayNumberOfGift;
 import scene.setupScene.SetupPlayer;
 import scene.setupScene.SetupStation;
-import game.player.Player;
 import maps.Map;
 
 
-public class GamePlayScene1 implements Scene{
+public class GamePlayScene implements Scene{
+    private String mapPath;
+    public static int level =0;
+
+
+    public GamePlayScene(String mapPath){
+        this.mapPath = mapPath;
+    }
+
 
     private void setupCharacter(){
         GameObjectManager.instance.recycle(GiftSpawner.class);
         GameObjectManager.instance.recycle(SetupStation.class);
         GameObjectManager.instance.recycle(SetupPlayer.class);
+        GameObjectManager.instance.recycle(DisplayNumberOfGift.class);
 
     }
 
-
-    private void addPlatform(){
-        Map map = Map.load("assets/maps/ATA-MAPS/atamap1.json");
+    private void addPlatform(String mapPath){
+        Map map = Map.load(mapPath);
         map.generate();
     }
 
     @Override
     public void init() {
         GameObjectManager.instance.recycle(Background.class);
-        this.addPlatform();
+        this.addPlatform(this.mapPath);
         this.setupCharacter();
+
     }
 
     @Override

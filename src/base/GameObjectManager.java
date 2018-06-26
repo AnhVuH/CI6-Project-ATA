@@ -73,6 +73,13 @@ public class GameObjectManager {
                     .orElse(null);
         }
 
+    public  <T extends GameObject> long countObjectAlive(Class<T> cls) {
+        return this.list.stream()
+                .filter(gameObject -> gameObject.isAlive)
+                .filter(gameObject -> cls.isInstance(gameObject))
+                .count();
+    }
+
         public List<Platform> findPlatformsByName(String name){
             List<Platform> platformList = new ArrayList<>();
             this.list

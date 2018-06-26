@@ -7,6 +7,7 @@ import base.Vector2D;
 import constant.Constant;
 import game.platform.Platform;
 
+import game.platform.StartStation;
 import game.platform.Station;
 import physic.BoxCollider;
 import physic.PhysicBody;
@@ -30,7 +31,7 @@ public class DeadPlayer extends Player implements PhysicBody {
         this.boxCollider = new BoxCollider(Constant.Player.WIDTH,Constant.Player.HEIGHT);
         this.deadPlayerCheckMove = new DeadPlayerCheckMove();
         this.frameCounter = new FrameCounter(10);
-        this.runHitObject = new RunHitObject(Platform.class, Station.class);
+        this.runHitObject = new RunHitObject(Platform.class, Station.class,StartStation.class);
     }
 
 

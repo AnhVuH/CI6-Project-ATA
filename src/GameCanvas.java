@@ -1,8 +1,9 @@
 import base.GameObjectManager;
 import base.Vector2D;
 import constant.Constant;
-import scene.GamePlayScene1;
+import scene.GamePlayScene;
 import scene.SceneManager;
+import scene.SceneSpawner;
 import viewport.ChangeViewPort;
 import viewport.ViewPort;
 
@@ -15,15 +16,17 @@ public class GameCanvas extends JPanel {
 
     private  BufferedImage backBuffered;
     private Graphics graphics;
-    public ViewPort viewPort;
-    public ChangeViewPort changeViewPort;
+    private ViewPort viewPort;
+    private ChangeViewPort changeViewPort;
+    public int playSceneIndex;
 
     public GameCanvas(){
         this.position = new Vector2D();
         this.setSize(Constant.Canvas.WIDTH,Constant.Canvas.HEIGHT);
         this.setupBackBuffered();
 
-        SceneManager.instance.changeScene(new GamePlayScene1());
+//        SceneManager.instance.changeScene(new GamePlayScene("assets/maps/ATA-MAPS/atamap1.json"));
+        new SceneSpawner();
 
         this.setVisible(true);
         this.viewPort = new ViewPort();

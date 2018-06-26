@@ -2,6 +2,7 @@ package game.player;
 
 import base.GameObjectManager;
 import game.platform.Platform;
+import game.platform.StartStation;
 import game.platform.Station;
 import physic.BoxCollider;
 
@@ -9,6 +10,7 @@ public class DeadPlayerCheckMove {
     public void run(DeadPlayer player) {
         this.checkMove(player, Platform.class);
         this.checkMove(player, Station.class);
+        this.checkMove(player, StartStation.class);
         player.position.y += player.velocity.y;
 
     }
