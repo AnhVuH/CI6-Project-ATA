@@ -24,7 +24,9 @@ public class DisplayNumberOfGift extends GameObject {
                 new ActionAdapter() {
                     @Override
                     public boolean run(GameObject owner) {
+                        // tìm số quà còn lại trong map
                         long numberOfGift = GameObjectManager.instance.countObjectAlive(Gift.class);
+                        // tìm player để lấy vị trí của player hiển thị dòng text số quà còn lại phía trên
                         Player player = GameObjectManager.instance.findObjectAlive(Player.class);
 
                         boolean created = false;

@@ -17,10 +17,12 @@ public class SetupPlayer extends GameObject {
                 new ActionAdapter() {
                     @Override
                     public boolean run(GameObject owner) {
+                        //tìm vị tí của start station
                         StartStation startStation = GameObjectManager.instance.findObjectAlive(StartStation.class);
 
                         boolean created = false;
                         if(startStation!=null){
+                            // khởi tạo 1 player ở vị trí start station đã tìm được
                             Player player = GameObjectManager.instance.recycle(Player.class);
                             player.position.set(startStation.position.subtract(0,Constant.Station.HEIGHT/2 + Constant.Player.HEIGHT/2));
                             created = true;

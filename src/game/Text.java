@@ -7,7 +7,7 @@ import renderer.TextRenderer;
 import java.awt.*;
 
 public class Text extends GameObject {
-        public Text(Vector2D position, String text, Color color,String path, int fontsize){
+        public Text(Vector2D position, String text, Color color, String path, int fontsize){
             this.position = position;
             this.renderer = new TextRenderer(text, color, path, fontsize);
         }

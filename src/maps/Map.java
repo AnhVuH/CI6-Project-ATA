@@ -6,6 +6,7 @@ import utils.Utils;
 import java.util.List;
 
 public class Map {
+    // các tên thuộc tính phải trùng với các key trong file json
     public List<Layer> layers;
     public List<Tile> tilesets;
 
@@ -20,6 +21,7 @@ public class Map {
         String mapContent = Utils.readTextFile(url);
         Gson gson = new Gson();
         return gson.fromJson(mapContent, Map.class);
+
     }
 
 

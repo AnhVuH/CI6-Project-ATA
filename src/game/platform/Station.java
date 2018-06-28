@@ -10,7 +10,7 @@ import renderer.ImageRenderer;
 public class Station extends GameObject implements PhysicBody {
     public BoxCollider boxCollider;
     public Station(){
-        this.renderer = new ImageRenderer("assets/images/grey_rect.png", Constant.Station.WIDTH, Constant.Station.HEIGHT);
+        this.renderer = new ImageRenderer("assets/images/station.png", Constant.Station.WIDTH, Constant.Station.HEIGHT);
         this.boxCollider = new BoxCollider(Constant.Station.WIDTH, Constant.Station.HEIGHT);
     }
 

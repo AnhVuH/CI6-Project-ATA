@@ -1,9 +1,10 @@
 import base.GameObjectManager;
 import base.Vector2D;
 import constant.Constant;
-import scene.GamePlayScene;
+import game.Button;
+import input.MouseInput;
 import scene.SceneManager;
-import scene.SceneSpawner;
+import scene.StartScene;
 import viewport.ChangeViewPort;
 import viewport.ViewPort;
 
@@ -18,15 +19,17 @@ public class GameCanvas extends JPanel {
     private Graphics graphics;
     private ViewPort viewPort;
     private ChangeViewPort changeViewPort;
-    public int playSceneIndex;
+
+
 
     public GameCanvas(){
         this.position = new Vector2D();
         this.setSize(Constant.Canvas.WIDTH,Constant.Canvas.HEIGHT);
         this.setupBackBuffered();
 
-//        SceneManager.instance.changeScene(new GamePlayScene("assets/maps/ATA-MAPS/atamap1.json"));
-        new SceneSpawner();
+        SceneManager.instance.changeScene(new StartScene());
+
+//        new SceneSpawner();
 
         this.setVisible(true);
         this.viewPort = new ViewPort();
@@ -54,7 +57,13 @@ public class GameCanvas extends JPanel {
     public void runAll(){
         GameObjectManager.instance.runAll();
         SceneManager.instance.performChangeSceneIfNeeded();
+        if(MouseInput.instance.clicked){
+            MouseInput.instance.checkMouseClicked();
+            System.out.println("click");
+            MouseInput.instance.clicked = false;
+        }
         this.changeViewPort.run(this.viewPort);
+
 
     }
 

@@ -40,7 +40,7 @@ public class Constant {
 
     public static class Station{
         public static final int WIDTH = 80;
-        public static final int HEIGHT= 20;
+        public static final int HEIGHT= 40;
     }
 
     public static class Scene{
@@ -50,4 +50,12 @@ public class Constant {
                 };
 
     }
+
+    public static class Button{
+        public static final String START ="Start Button";
+        public static final String REPLAY_ALL=         "Replay All";
+
+    }
+
+
 }

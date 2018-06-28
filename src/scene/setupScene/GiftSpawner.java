@@ -16,6 +16,7 @@ public class GiftSpawner extends GameObject {
         this.createAction();
     }
 
+    //chỉ khởi tạo các object quà 1 lần
     private void createAction() {
         this.addAction(
                         new ActionAdapter() {
@@ -35,6 +36,7 @@ public class GiftSpawner extends GameObject {
     }
 
     private boolean setupGift(){
+        // tìm các tile có tên "Gift-station" để đặt các object quà vào
         List<Platform> giftStations = GameObjectManager.instance.findPlatformsByName("Gift-station");
         boolean created = false;
         if(giftStations.size()!=0) {

@@ -1,5 +1,6 @@
 package base;
 
+import game.Button;
 import game.platform.Platform;
 import game.player.Player;
 import physic.BoxCollider;
@@ -110,6 +111,15 @@ public class GameObjectManager {
             }
             return object;
 
+        }
+
+        public List<game.Button> findButton(){
+        List<Button> listButton = new ArrayList<>();
+        this.list.stream()
+                .filter(gameObject -> gameObject instanceof game.Button)
+                .forEach(gameObject ->
+                listButton.add((game.Button)gameObject));
+        return listButton;
         }
 
     public void clear(){

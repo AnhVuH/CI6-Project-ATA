@@ -1,6 +1,7 @@
 import base.GameObjectManager;
 import constant.Constant;
 import input.KeyboardInput;
+import input.MouseInput;
 
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
@@ -38,8 +39,16 @@ public class GameWindow extends JFrame {
         });
     }
 
+    private void mouseEvent(){
+//        this.addMouseListener(MouseInput.instance);
+        // phải sử dụng getContentPane để lấy tọa độ 0,0 không tính phần bao của cửa sổ window
+        // lệnh getX, getY lấy tọa độ so với điểm 0,0 là phần nội dung bên trong ko tính phần bao
+        this.getContentPane().addMouseListener(MouseInput.instance);
+    }
+
     private void event(){
         this.keyboardEvent();
+        this.mouseEvent();
         this.windowEvent();
     }
 

@@ -29,7 +29,7 @@ public class Player extends GameObject implements PhysicBody {
 
     public Player(){
         this.velocity = new Vector2D();
-        this.renderer = new ImageRenderer("assets/maps/ATA-MAPS/ufo.png",Constant.Player.WIDTH,Constant.Player.HEIGHT);
+        this.renderer = new ImageRenderer("assets/images/ufo.png",Constant.Player.WIDTH,Constant.Player.HEIGHT);
 //        this.renderer = new ImageRenderer("assets/images/_ufo__by_mrichston_zpsgr01l96i.gif",Constant.Player.WIDTH,Constant.Player.HEIGHT);
         this.boxCollider = new BoxCollider(Constant.Player.WIDTH,Constant.Player.HEIGHT);
         this.playerMove = new PlayerMove();
@@ -57,31 +57,53 @@ public class Player extends GameObject implements PhysicBody {
 
     @Override
     public void getHit(GameObject gameObject) {
+        //kiểm tra nếu chạm vào platform là chết
         if(gameObject instanceof Platform){
             this.isAlive = false;
             DeadPlayer deadPlayer = GameObjectManager.instance.recycle(DeadPlayer.class);
             deadPlayer.position.set(this.position);
         }
         else if(gameObject instanceof Station|| gameObject instanceof Gift ||gameObject instanceof StartStation){
+            //nếu va chạm với gift hoặc station theo phương ngang hoặc theo phương dọc nhưng tốc độ quá lớn cũng chêt
             if(playerMove.curentVelocity.x !=0 || playerMove.curentVelocity.y >Constant.Speed.DEAD_VELOCIY){
-//                System.out.println(playerMove.curentVelocity.x);
-//                System.out.println(playerMove.curentVelocity.y);
+
                 this.isAlive = false;
                 DeadPlayer deadPlayer = GameObjectManager.instance.recycle(DeadPlayer.class);
                 deadPlayer.position.set(this.position);
             }
             else{
-//                System.out.println(playerMove.curentVelocity.y);
+
                 if(gameObject instanceof Gift){
-                    System.out.println("take gift");
-                    GameObjectManager.instance.add(new DisplayNumberOfGift());
+                    // nếu đáp xuống lấy quà quá lệch ->chết
+                    if(this.position.x < gameObject.position.x- Constant.Gift.WIDTH/2
+                            || this.position.x > gameObject.position.x + Constant.Gift.WIDTH/2 ){
+                        this.isAlive = false;
+                        DeadPlayer deadPlayer = GameObjectManager.instance.recycle(DeadPlayer.class);
+                        deadPlayer.position.set(this.position);
+                    }
+                    //sau khi lấy được 1 gift thì đếm và hiển thị lại số gift cần lấy
+                    else{
+                        GameObjectManager.instance.add(new DisplayNumberOfGift());
+                    }
+
                 }
                 else{
-                    System.out.println("safe");
-                    if(gameObject instanceof Station && GameObjectManager.instance.findObjectAlive(Gift.class)==null){
-//                        SceneManager.instance.changeScene(new GameWinScene());
-                        new SceneSpawner();
+                    //đáp lệch station quá chêt
+                    if(this.position.x < gameObject.position.x- Constant.Station.WIDTH/2
+                            || this.position.x  > gameObject.position.x + Constant.Station.WIDTH/2 )
+                    {
+                        this.isAlive = false;
+                        DeadPlayer deadPlayer = GameObjectManager.instance.recycle(DeadPlayer.class);
+                        deadPlayer.position.set(this.position);
                     }
+                    else {
+                        // đáp vào station cuối sau khi đã ăn hết quà thì qua bài mới
+                        if(gameObject instanceof Station && GameObjectManager.instance.findObjectAlive(Gift.class)==null){
+                            new SceneSpawner();
+                        }
+                    }
+
+
                 }
 
             }

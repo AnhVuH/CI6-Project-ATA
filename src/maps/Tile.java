@@ -14,7 +14,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
 public class Tile {
-    public Integer firstgid;
+    // các tên thuộc tính phải trùng với các trường trong trường tilesets của file json
+    public Integer firstgid; // id của tile trong mảng data (integer object)
     public String image;
     public String name;
     public int tileheight, tilewidth;
