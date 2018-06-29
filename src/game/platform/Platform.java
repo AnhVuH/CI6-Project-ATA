@@ -12,6 +12,10 @@ public class Platform extends GameObject implements PhysicBody {
     private BoxCollider boxCollider;
     public String name;
 
+//    public Platform() {
+//        this.renderer = new ImageRenderer("assets/images/green_square.png", Constant.Tile.WIDTH, Constant.Tile.HEIGHT);
+//        this.boxCollider = new BoxCollider(Constant.Tile.WIDTH, Constant.Tile.HEIGHT );
+//    }
 
     public Platform(String path, String name) {
         this.renderer = new ImageRenderer(path, Constant.Tile.WIDTH, Constant.Tile.HEIGHT);
