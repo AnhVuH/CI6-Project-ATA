@@ -20,17 +20,9 @@ public class GameOverScene implements Scene {
         game.Button replayButton = new Button(
                 new Vector2D(Constant.Window.WIDTH/2, Constant.Window.HEIGHT/2) ,
                 160,
-                60,
-                Color.GREEN,
-                Constant.Button.REPLAY_ALL); //"Replay All"
+                80,
+                Constant.Button.REPLAY_ALL,"assets/images/replay-all-button.png"); //"Replay All"
         GameObjectManager.instance.add(replayButton);
-        Text labelButton = new Text(
-                new Vector2D(Constant.Window.WIDTH/2-50, Constant.Window.HEIGHT/2+10),
-                "Replay",
-                "Arial",
-                30,
-                Color.WHITE);
-        GameObjectManager.instance.add(labelButton);
     }
 
     @Override

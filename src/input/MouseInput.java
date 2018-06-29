@@ -10,6 +10,7 @@ import java.awt.event.MouseListener;
 import java.util.List;
 
 public class MouseInput implements MouseListener {
+    // sử dụng object instance là kiểu static dùng chung cho class ko cần khởi tạo 1 object cụ thể
     public static MouseInput instance = new MouseInput();
     public boolean clicked;
     public Vector2D positionClicked;
@@ -61,6 +62,7 @@ public class MouseInput implements MouseListener {
                         )
                 {
                     System.out.println(button.label);
+                    
                     ClickButtonReact.instance.run(button.label);
 
                 }

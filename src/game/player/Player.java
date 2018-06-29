@@ -14,9 +14,7 @@ import physic.BoxCollider;
 import physic.PhysicBody;
 import physic.RunHitObject;
 import renderer.ImageRenderer;
-import scene.GameWinScene;
-import scene.SceneManager;
-import scene.SceneSpawner;
+import scene.*;
 import scene.setupScene.DisplayNumberOfGift;
 
 public class Player extends GameObject implements PhysicBody {
@@ -99,7 +97,17 @@ public class Player extends GameObject implements PhysicBody {
                     else {
                         // đáp vào station cuối sau khi đã ăn hết quà thì qua bài mới
                         if(gameObject instanceof Station && GameObjectManager.instance.findObjectAlive(Gift.class)==null){
-                            new SceneSpawner();
+                            if(GamePlayScene.level < Constant.Scene.ARRAY_PATH_SCENE.length)
+                            {
+                                GamePlayScene.playTime = System.currentTimeMillis() - GamePlayScene.playTime;
+                                SceneManager.instance.changeScene(new ChangeLevelScene());
+                            }
+                            else{
+                                SceneManager.instance.changeScene(new GameWinScene());
+                            }
+
+
+
                         }
                     }
 

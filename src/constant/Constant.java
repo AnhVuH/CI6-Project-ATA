@@ -53,7 +53,9 @@ public class Constant {
 
     public static class Button{
         public static final String START ="Start Button";
-        public static final String REPLAY_ALL=         "Replay All";
+        public static final String REPLAY_ALL= "Replay All";
+        public static final String REPLAY_ONE= "Replay One";
+        public static final String NEXT_SCENE= "Next Scene";
 
     }
 

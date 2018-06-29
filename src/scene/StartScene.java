@@ -17,17 +17,9 @@ public class StartScene implements Scene {
                 new Vector2D(Constant.Window.WIDTH/2, Constant.Window.HEIGHT/2) ,
                 300,
                 80,
-                Color.GREEN,
-                Constant.Button.START); // "Start Button"
+                Constant.Button.START,"assets/images/start-button.png"); // "Start Button"
         GameObjectManager.instance.recycle(Background.class);
         GameObjectManager.instance.add(startButton);
-        Text labelButton = new Text(
-                new Vector2D(Constant.Window.WIDTH/2-120, Constant.Window.HEIGHT/2+10),
-                "Click here to start",
-                "Arial",
-                30,
-                Color.WHITE);
-        GameObjectManager.instance.add(labelButton);
 
     }
 
