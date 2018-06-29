@@ -16,8 +16,9 @@ public class GamePlayScene implements Scene{
     private String mapPath;
     // sử dụng biến static để lưu thứ tự của play scene trong list ở Constant.Scene
     public static int level =0;
+    public static long startTime =0;
+    public static long totalPlayTime =0;
     public static long playTime =0;
-
 
 
     public GamePlayScene(String mapPath){
@@ -51,7 +52,6 @@ public class GamePlayScene implements Scene{
 
     @Override
     public void deinit() {
-
         GameObjectManager.instance.clear();
 
     }

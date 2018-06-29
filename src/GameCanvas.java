@@ -59,7 +59,6 @@ public class GameCanvas extends JPanel {
         SceneManager.instance.performChangeSceneIfNeeded();
         if(MouseInput.instance.clicked){
             MouseInput.instance.checkMouseClicked();
-            System.out.println("click");
             MouseInput.instance.clicked = false;
         }
         this.changeViewPort.run(this.viewPort);

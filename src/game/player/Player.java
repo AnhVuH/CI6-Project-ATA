@@ -98,7 +98,10 @@ public class Player extends GameObject implements PhysicBody {
                         // đáp vào station cuối sau khi đã ăn hết quà thì qua bài mới
                         if(gameObject instanceof Station && GameObjectManager.instance.findObjectAlive(Gift.class)==null){
 
-                                GamePlayScene.playTime = System.currentTimeMillis() - GamePlayScene.playTime;
+                                GamePlayScene.playTime = System.currentTimeMillis()/1000 - GamePlayScene.startTime;
+                                GamePlayScene.totalPlayTime +=GamePlayScene.playTime;
+                            System.out.println(GamePlayScene.playTime);
+                            System.out.println(GamePlayScene.totalPlayTime);
                                 SceneManager.instance.changeScene(new ChangeLevelScene());
 
 

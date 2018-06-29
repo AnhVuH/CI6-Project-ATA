@@ -60,7 +60,7 @@ public class MouseInput implements MouseListener {
                         && this.positionClicked.y< bottomEdge
                         )
                 {
-                    System.out.println(button.label);
+
                     ClickButtonReact.instance.run(button.label);
 
                 }

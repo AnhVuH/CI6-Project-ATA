@@ -45,8 +45,9 @@ public class Constant {
 
     public static class Scene{
         public static final String[] ARRAY_PATH_SCENE = {"assets/maps/ATA-MAPS/atamap1.1.json",
-                "assets/maps/ATA-MAPS/atamap2.json",
-                "assets/maps/ATA-MAPS/atamap3.json"
+                "assets/maps/ATA-MAPS/atamap1.1.json",
+//                "assets/maps/ATA-MAPS/atamap2.json",
+//                "assets/maps/ATA-MAPS/atamap3.json"
                 };
 
     }
@@ -56,6 +57,7 @@ public class Constant {
         public static final String REPLAY_ALL= "Replay All";
         public static final String REPLAY_ONE= "Replay One";
         public static final String NEXT_SCENE= "Next Scene";
+        public static final String SCORE= "SCORE";
 
     }
 

@@ -13,12 +13,14 @@ public class ChangeLevelScene implements Scene {
 
     @Override
     public void init() {
+        long minute = (GamePlayScene.playTime)/60;
+        long second = (GamePlayScene.playTime)%60;
         Text textScore = new Text(
                 new Vector2D(Constant.Window.WIDTH/2 -200,Constant.Window.HEIGHT/2-50),
-                "Your time: " + GamePlayScene.playTime/1000 +" seconds","Arial" ,
+                "Your time: " + minute +" minutes " +second+" seconds","Arial" ,
                 30,
                 Color.red );
-//        GameObjectManager.instance.recycle(Background.class);
+
         GameObjectManager.instance.add(textScore);
 
         game.Button replayButton = new Button(
@@ -38,17 +40,16 @@ public class ChangeLevelScene implements Scene {
         }
         else{
             Text text = new Text(new Vector2D(Constant.Window.WIDTH/2 -100,Constant.Window.HEIGHT/2-150), "You Win!!!","Arial" , 50,Color.red );
-//        GameObjectManager.instance.recycle(Background.class);
+
             GameObjectManager.instance.add(text);
 
-            game.Button replayAllButton = new Button(
+            game.Button scoreButton = new Button(
                     new Vector2D(Constant.Window.WIDTH/2, Constant.Window.HEIGHT/2) ,
                     100,
                     40,
-                    Constant.Button.REPLAY_ALL,"assets/images/replay-all-button.png"); //"Next Scene"
-            GameObjectManager.instance.add(replayAllButton);
+                    Constant.Button.SCORE,"assets/images/score3.png"); //"Score"
+            GameObjectManager.instance.add(scoreButton);
         }
-
 
     }
 
