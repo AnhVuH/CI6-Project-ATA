@@ -13,7 +13,8 @@ public class Background extends GameObject {
 
     public Background() {
 
-        this.renderer = new BackgroundRenderer(Color.BLACK,MAPWIDTH,MAPHEIGHT);
+//        this.renderer = new BackgroundRenderer(Color.BLACK,MAPWIDTH,MAPHEIGHT);
+        this.renderer = new BackgroundRenderer("assets/images/background.png",MAPWIDTH,MAPHEIGHT);
     }
 
     @Override

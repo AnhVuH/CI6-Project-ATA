@@ -19,6 +19,9 @@ import physic.RunHitObject;
 import renderer.ImageRenderer;
 import scene.*;
 import scene.setupScene.DisplayNumberOfGift;
+import utils.Utils;
+
+import javax.sound.sampled.Clip;
 
 public class Player extends GameObject implements PhysicBody {
     protected Vector2D velocity;
@@ -26,7 +29,9 @@ public class Player extends GameObject implements PhysicBody {
     protected BoxCollider boxCollider;
     public RunHitObject runHitObject;
 
-//    public boolean takeGift = false;
+    private Clip win;
+
+
 
 
 
@@ -42,6 +47,7 @@ public class Player extends GameObject implements PhysicBody {
                 StartStation.class,
                 Gift.class
                );
+        this.win = Utils.loadAudio("assets/audio/win.wav");
     }
 
 
@@ -79,12 +85,14 @@ public class Player extends GameObject implements PhysicBody {
     public void getHit(GameObject gameObject) {
         //kiểm tra nếu chạm vào platform là chết
         if(gameObject instanceof Platform){
+            this.playerMove.fly.stop();
 
             this.isAlive = false;
             DeadPlayer deadPlayer = GameObjectManager.instance.recycle(DeadPlayer.class);
             deadPlayer.position.set(this.position);
         }
         else if(gameObject instanceof Station|| gameObject instanceof Gift ||gameObject instanceof StartStation){
+            this.playerMove.fly.stop();
             //nếu va chạm với gift hoặc station theo phương ngang hoặc theo phương dọc nhưng tốc độ quá lớn cũng chêt
             if(playerMove.curentVelocity.x !=0 || playerMove.curentVelocity.y >Constant.Speed.DEAD_VELOCIY){
 
@@ -105,9 +113,11 @@ public class Player extends GameObject implements PhysicBody {
                 else {
                     // đáp vào station cuối sau khi đã ăn hết quà thì qua bài mới
                     if(gameObject instanceof Station && GameObjectManager.instance.findObjectAlive(Gift.class)==null){
+                        this.playerMove.fly.stop();
                         GamePlayScene.playTime = System.currentTimeMillis()/1000 - GamePlayScene.startTime;
                         GamePlayScene.totalPlayTime +=GamePlayScene.playTime;
-
+                        this.win.loop(0);
+                        this.win.start();
                         SceneManager.instance.changeScene(new ChangeLevelScene());
 
 

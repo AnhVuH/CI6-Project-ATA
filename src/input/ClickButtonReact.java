@@ -1,10 +1,7 @@
 package input;
 
 import constant.Constant;
-import scene.GamePlayScene;
-import scene.GameWinScene;
-import scene.SceneManager;
-import scene.SceneSpawner;
+import scene.*;
 
 public class ClickButtonReact {
     public static ClickButtonReact instance = new ClickButtonReact();
@@ -26,6 +23,11 @@ public class ClickButtonReact {
         }
         if(labelButton.equals(Constant.Button.SCORE)){
             SceneManager.instance.changeScene(new GameWinScene());
+        }
+        if(labelButton.equals(Constant.Button.BACK_HOME)){
+            GamePlayScene.level =0;
+            GamePlayScene.totalPlayTime =0;
+            SceneManager.instance.changeScene(new StartScene());
         }
 
     }

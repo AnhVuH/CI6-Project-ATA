@@ -16,7 +16,7 @@ public class ChangeLevelScene implements Scene {
         long minute = (GamePlayScene.playTime)/60;
         long second = (GamePlayScene.playTime)%60;
         Text textScore = new Text(
-                new Vector2D(Constant.Window.WIDTH/2 -200,Constant.Window.HEIGHT/2-50),
+                new Vector2D(Constant.Window.WIDTH/2 -250,Constant.Window.HEIGHT/2-50),
                 "Your time: " + minute +" minutes " +second+" seconds","Arial" ,
                 30,
                 Color.red );

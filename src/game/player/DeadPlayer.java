@@ -18,6 +18,9 @@ import physic.RunHitObject;
 import renderer.ImageRenderer;
 import scene.GameOverScene;
 import scene.SceneManager;
+import utils.Utils;
+
+import javax.sound.sampled.Clip;
 
 public class DeadPlayer extends Player implements PhysicBody {
     private final float GRAVITY = 1f;
@@ -26,6 +29,7 @@ public class DeadPlayer extends Player implements PhysicBody {
     private DeadPlayerCheckMove deadPlayerCheckMove;
     private FrameCounter frameCounter;
     private RunHitObject runHitObject;
+    private Clip lose;
 
     public DeadPlayer(){
         this.velocity = new Vector2D();
@@ -34,6 +38,7 @@ public class DeadPlayer extends Player implements PhysicBody {
         this.deadPlayerCheckMove = new DeadPlayerCheckMove();
         this.frameCounter = new FrameCounter(10);
         this.runHitObject = new RunHitObject(Platform.class, Station.class,StartStation.class);
+        this.lose = Utils.loadAudio("assets/audio/lose.wav");
     }
 
 
@@ -49,6 +54,8 @@ public class DeadPlayer extends Player implements PhysicBody {
         }
         this.deadPlayerCheckMove.run(this);
         this.runHitObject.run(this);
+        this.lose.loop(0);
+        this.lose.start();
     }
 
 

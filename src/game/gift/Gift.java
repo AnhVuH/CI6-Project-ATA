@@ -11,7 +11,7 @@ import renderer.ImageRenderer;
 public class Gift extends GameObject implements PhysicBody {
     BoxCollider boxCollider;
     public Gift(){
-        this.renderer = new ImageRenderer("assets/images/yellow_square.jpg",Constant.Gift.WIDTH,Constant.Gift.HEIGHT);
+        this.renderer = new ImageRenderer("assets/images/TreasureChest.png",Constant.Gift.WIDTH,Constant.Gift.HEIGHT);
         this.boxCollider = new BoxCollider(Constant.Gift.WIDTH,Constant.Gift.HEIGHT);
 
     }
