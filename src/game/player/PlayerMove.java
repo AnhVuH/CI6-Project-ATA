@@ -16,7 +16,9 @@ public class PlayerMove {
 
     private FrameCounter frameCounter;
 
+
     public PlayerMove() {
+
         this.frameCounter = new FrameCounter(Constant.Speed.DELAY_VERTICAL);
 
         this.playerCheckMoveHorizontal = new PlayerCheckMoveHorizontal();
@@ -30,6 +32,9 @@ public class PlayerMove {
             if (KeyboardInput.instance.upPressed) {
                 player.velocity.y += -FLY_SPEED;
             }
+//            if(KeyboardInput.instance.spacePressed){
+//                player.velocity.y = 0;
+//            }
             this.frameCounter.reset();
         }
 

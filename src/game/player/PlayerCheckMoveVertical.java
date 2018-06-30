@@ -12,7 +12,7 @@ public class PlayerCheckMoveVertical {
         this.checkMove(player,Platform.class);
         this.checkMove(player,Station.class);
         this.checkMove(player,StartStation.class);
-        this.checkMove(player, Gift.class);
+//        this.checkMove(player, Gift.class);
         player.position.y += player.velocity.y;
 
     }

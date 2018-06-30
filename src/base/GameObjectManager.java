@@ -1,6 +1,7 @@
 package base;
 
 import game.Button;
+import game.gift.GiftTaker;
 import game.platform.Platform;
 import game.player.Player;
 import physic.BoxCollider;
@@ -9,7 +10,6 @@ import physic.PhysicBody;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class GameObjectManager {
 
@@ -121,6 +121,7 @@ public class GameObjectManager {
                 listButton.add((game.Button)gameObject));
         return listButton;
         }
+
 
     public void clear(){
         this.list.clear();

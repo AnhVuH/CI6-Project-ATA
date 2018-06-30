@@ -3,6 +3,7 @@ package game.gift;
 import base.GameObject;
 import constant.Constant;
 import game.player.Player;
+import input.KeyboardInput;
 import physic.BoxCollider;
 import physic.PhysicBody;
 import renderer.ImageRenderer;
@@ -28,7 +29,8 @@ public class Gift extends GameObject implements PhysicBody {
 
     @Override
     public void getHit(GameObject gameObject) {
-        if(gameObject instanceof Player){
+
+        if(gameObject instanceof GiftTaker){
             this.isAlive = false;
         }
 

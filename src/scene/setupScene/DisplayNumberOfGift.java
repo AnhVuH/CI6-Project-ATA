@@ -39,7 +39,8 @@ public class DisplayNumberOfGift extends GameObject {
 
                         return created;
                     }
-                },
+                }
+                ,
                 new WaitAction(50),
                 new ActionAdapter() {
                     @Override

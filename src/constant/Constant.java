@@ -42,10 +42,15 @@ public class Constant {
         public static final int WIDTH = 80;
         public static final int HEIGHT= 40;
     }
+    public static class GiftTaker{
+        public static final int WIDTH = 20;
+        public static final int HEIGHT= 25;
+    }
 
     public static class Scene{
-        public static final String[] ARRAY_PATH_SCENE = {"assets/maps/ATA-MAPS/atamap1.1.json",
+        public static final String[] ARRAY_PATH_SCENE = {
                 "assets/maps/ATA-MAPS/atamap1.1.json",
+//                "assets/maps/ATA-MAPS/atamap1.1.json",
 //                "assets/maps/ATA-MAPS/atamap2.json",
 //                "assets/maps/ATA-MAPS/atamap3.json"
                 };
