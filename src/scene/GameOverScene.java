@@ -18,12 +18,15 @@ public class GameOverScene implements Scene {
     @Override
     public void init() {
 //        Text  text = new Text(new Vector2D(Constant.Window.WIDTH/2 -100,Constant.Window.HEIGHT/2-50), "Game Over","Arial" , 50,Color.red );
-////        GameObjectManager.instance.recycle(Background.class);
-//        GameObjectManager.instance.add(text);
+        GameObjectManager.instance.recycle(Background.class);
+        Text text = new Text(
+                new Vector2D(Constant.Window.WIDTH/2 -145,Constant.Window.HEIGHT/2-140),
+                "You Lose!!!", Color.RED, "assets/font/Pixeled.ttf", 60);
+        GameObjectManager.instance.add(text);
         game.Button replayButton = new Button(
                 new Vector2D(Constant.Window.WIDTH/2, Constant.Window.HEIGHT/2) ,
-                160,
-                80,
+                300,
+                120,
                 Constant.Button.REPLAY_ALL,"assets/images/replay-all-button.png"); //"Replay All"
         GameObjectManager.instance.add(replayButton);
         this.gameOver =Utils.loadAudio("assets/audio/gameover.wav");

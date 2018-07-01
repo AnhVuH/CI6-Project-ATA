@@ -19,17 +19,17 @@ public class GameWinScene implements Scene {
         GameObjectManager.instance.recycle(Background.class);
         long minute = (GamePlayScene.totalPlayTime)/60;
         long second = (GamePlayScene.totalPlayTime)%60;
+
         Text textScore = new Text(
-                new Vector2D(Constant.Window.WIDTH/2 -280,Constant.Window.HEIGHT/2-50),
-                "Your total time: " + minute +" minutes " +second+" seconds","Arial" ,
-                30,
-                Color.red );
+                new Vector2D(Constant.Window.WIDTH/2 -275,Constant.Window.HEIGHT/2-60),
+                "Your total time: " + minute +" minutes " +second+" seconds", Color.white, "assets/font/Pixeled.ttf", 30);
+
         GameObjectManager.instance.add(textScore);
 
         game.Button backButton = new Button(
-                new Vector2D(Constant.Window.WIDTH/2-50, Constant.Window.HEIGHT/2) ,
-                300,
-                80,
+                new Vector2D(Constant.Window.WIDTH/2, Constant.Window.HEIGHT/2) ,
+                250,
+                100,
                 Constant.Button.BACK_HOME,"assets/images/back-home.png"); //"Back home"
         GameObjectManager.instance.add(backButton);
         this.sound = Utils.loadAudio("assets/audio/Communications satellite.wav");

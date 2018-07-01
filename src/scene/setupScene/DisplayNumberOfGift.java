@@ -32,7 +32,9 @@ public class DisplayNumberOfGift extends GameObject {
                         boolean created = false;
                         if (numberOfGift > 0 && player!=null) {
                             created = true;
-                            Text text = new Text(new Vector2D(player.position.x,50), "Find more " + numberOfGift+" gifts " , "Arial", 30, Color.red);
+//                            Text text = new Text(new Vector2D(player.position.x,50), "Find more " + numberOfGift+" gifts " , "Arial", 30, Color.red);
+                            Text text = new Text(new Vector2D(player.position.x,50),
+                                        "Find more " + numberOfGift+" gifts ", Color.white, "assets/font/Pixeled.ttf", 30);
                             GameObjectManager.instance.add(text);
 
                         }

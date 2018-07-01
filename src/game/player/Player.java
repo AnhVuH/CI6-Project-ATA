@@ -72,6 +72,8 @@ public class Player extends GameObject implements PhysicBody {
             if(oldgiftTaker!=null){ oldgiftTaker.isAlive =false;
             }
 
+
+
         }
     }
 
