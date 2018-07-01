@@ -1,4 +1,4 @@
-package game;
+package game.text;
 
 import base.GameObject;
 import base.Vector2D;

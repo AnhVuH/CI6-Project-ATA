@@ -5,11 +5,9 @@ import base.Vector2D;
 import constant.Constant;
 import game.Background;
 import game.Button;
-import game.Text;
 import utils.Utils;
 
 import javax.sound.sampled.Clip;
-import java.awt.*;
 
 public class StartScene implements Scene {
     private Clip startSound;

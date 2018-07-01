@@ -6,7 +6,7 @@ import constant.Constant;
 
 import game.Background;
 import game.Button;
-import game.Text;
+import game.text.Text;
 import utils.Utils;
 
 import javax.sound.sampled.Clip;

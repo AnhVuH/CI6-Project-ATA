@@ -2,18 +2,12 @@ package scene;
 
 
 import base.GameObjectManager;
-import base.Vector2D;
 import game.Background;
-import game.Text;
-import game.gift.Gift;
-import game.player.Player;
 import scene.setupScene.GiftSpawner;
 import scene.setupScene.DisplayNumberOfGift;
 import scene.setupScene.SetupPlayer;
 import scene.setupScene.SetupStation;
 import maps.Map;
-
-import java.awt.*;
 
 
 // tạo 1 class chung cho các Game Play scene, khi đổi scene chỉ cần truyền link của map
