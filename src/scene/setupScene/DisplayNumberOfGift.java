@@ -35,8 +35,13 @@ public class DisplayNumberOfGift extends GameObject {
 
                                 }
                                 else{
-                                    TextFollowPlayer newText =GameObjectManager.instance.recycle(TextFollowPlayer.class);
-                                    newText.renderer = new TextRenderer("Find " + numberOfGift+" more gifts", Color.white, "assets/font/Pixeled.ttf", 30);
+                                    if(numberOfGift>0){
+                                        textFollowPlayer.renderer = new TextRenderer("Find " + numberOfGift+" more gifts", Color.white, "assets/font/Pixeled.ttf", 30);
+                                    }
+                                    else{
+                                        textFollowPlayer.renderer = new TextRenderer("Go to station!!!", Color.white, "assets/font/Pixeled.ttf", 30);
+                                    }
+
                                 }
 
 //                        }

@@ -3,10 +3,7 @@ package scene;
 
 import base.GameObjectManager;
 import game.Background;
-import scene.setupScene.GiftSpawner;
-import scene.setupScene.DisplayNumberOfGift;
-import scene.setupScene.SetupPlayer;
-import scene.setupScene.SetupStation;
+import scene.setupScene.*;
 import maps.Map;
 
 
@@ -34,6 +31,7 @@ public class GamePlayScene implements Scene{
         GameObjectManager.instance.recycle(SetupStation.class);
         GameObjectManager.instance.recycle(SetupPlayer.class);
         GameObjectManager.instance.recycle(DisplayNumberOfGift.class);
+        GameObjectManager.instance.recycle(DisplayLevel.class);
 
 
     }
