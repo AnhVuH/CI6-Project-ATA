@@ -18,7 +18,7 @@ import java.awt.*;
 public class GiftTaker extends GameObject implements PhysicBody {
     public BoxCollider boxCollider;
     public RunHitObject runHitObject;
-    private FrameCounter frameCounter = new FrameCounter(5);
+    private FrameCounter frameCounter = new FrameCounter(4);
     private Clip gift;
     public GiftTaker(){
         this.renderer = new ImageRenderer("assets/images/yellow_square.jpg", Constant.GiftTaker.WIDTH, Constant.GiftTaker.HEIGHT);
